@@ -12,9 +12,10 @@ import com.google.android.material.navigation.NavigationView
 import com.themaker.fshmo.legalhackmos.R
 import com.themaker.fshmo.legalhackmos.data.preferences.Preferences
 import com.themaker.fshmo.legalhackmos.presentation.fragments.MainFragment
+import com.themaker.fshmo.legalhackmos.presentation.fragments.dtp.DtpFragment
 import com.themaker.fshmo.legalhackmos.presentation.fragments.webitem.WebItemFragment
 
-class MainActivity : AppCompatActivity(),MainMenuCallback {
+class MainActivity : AppCompatActivity(),MainMenuCallback ,NavigateToDtpCallback{
 
     private val TAG = javaClass.name
 
@@ -63,6 +64,13 @@ class MainActivity : AppCompatActivity(),MainMenuCallback {
         drawerLayout = findViewById(R.id.main_base_view_group);
         drawerLayout.openDrawer(GravityCompat.START);
         Log.d(TAG, "showMainNavigation: opening navigstion");
+    }
+
+    override fun navigateToDtp() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frame, DtpFragment())
+            .addToBackStack("Catalog")
+            .commit()
     }
 
     private fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
