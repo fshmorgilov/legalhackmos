@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/stop"
-                android:icon="@drawable/ic_stop"
+                android:id="@+id/nav_stop"
+                android:icon="@drawable/ic_stop_ed"
                 android:title="Ocтановка инспектором"/>
         <item
-                android:id="@+id/dtp"
+                android:id="@+id/nav_dtp"
                 android:icon="@drawable/ic_dtp"
                 android:title="Случилось ДТП"/>
         <item
-                android:id="@+id/online_chat"
+                android:id="@+id/nav_online_chat"
                 android:icon="@drawable/ic_uristchat"
                 android:title="Юрист онлайн-чат"/>
         <item
-                android:id="@+id/call_lawyer"
+                android:id="@+id/nav_call_lawyer"
                 android:icon="@drawable/ic_vyzovurist"
                 android:title="Юрист по вызову" />
         <item
-                android:id="@+id/map"
+                android:id="@+id/nav_map"
                 android:icon="@drawable/ic_map"
                 android:title="Карта постов ДПС"/>
         <item
-                android:id="@+id/inspector_rating"
+                android:id="@+id/nav_inspector_rating"
                 android:icon="@drawable/ic_rate"
                 android:title="Рейтинг инспекторов"/>
     </group>

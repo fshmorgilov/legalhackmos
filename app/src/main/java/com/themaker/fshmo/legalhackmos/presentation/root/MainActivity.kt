@@ -3,7 +3,6 @@ package com.themaker.fshmo.legalhackmos.presentation.root
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -11,11 +10,12 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.themaker.fshmo.legalhackmos.R
 import com.themaker.fshmo.legalhackmos.data.preferences.Preferences
+import com.themaker.fshmo.legalhackmos.presentation.fragments.dps.DpsMap
 import com.themaker.fshmo.legalhackmos.presentation.fragments.MainFragment
 import com.themaker.fshmo.legalhackmos.presentation.fragments.dtp.DtpFragment
 import com.themaker.fshmo.legalhackmos.presentation.fragments.webitem.WebItemFragment
 
-class MainActivity : AppCompatActivity(),MainMenuCallback ,NavigateToDtpCallback{
+class MainActivity : AppCompatActivity(), MainMenuCallback, NavigateToDtpCallback {
 
     private val TAG = javaClass.name
 
@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity(),MainMenuCallback ,NavigateToDtpCallback
         const val NOVELTY_TAG = "Novelties"
     }
 
-    private lateinit var preferences:Preferences
-    private lateinit var drawerLayout:DrawerLayout
-    private lateinit var navigationView:NavigationView
+    private lateinit var preferences: Preferences
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(),MainMenuCallback ,NavigateToDtpCallback
         Log.i(TAG, "onCreate: STARTED")
         drawerLayout = findViewById(R.id.main_base_view_group)
         navigationView = findViewById(R.id.main_navigation)
-//        navigationView.
+        navigationView.setNavigationItemSelectedListener(this@MainActivity::onNavigationItemSelected)
         preferences = Preferences(getPreferences(Context.MODE_PRIVATE))
         preferences.setFirstTimeAppLaunch()
         supportFragmentManager.beginTransaction()
@@ -77,16 +77,21 @@ class MainActivity : AppCompatActivity(),MainMenuCallback ,NavigateToDtpCallback
         menuItem.isChecked = true
         drawerLayout.closeDrawers()
         when (menuItem.itemId) {
-            R.id.main -> supportFragmentManager.beginTransaction()
+            R.id.nav_stop -> supportFragmentManager.beginTransaction()
                 .replace(R.id.main_frame, MainFragment())
                 .addToBackStack("Catalog")
                 .commit()
-            R.id.nav_novelty -> supportFragmentManager.beginTransaction()
-                .replace(R.id.main_frame, WebItemFragment())
+            R.id.nav_dtp -> supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frame, DtpFragment())
                 .addToBackStack(NOVELTY_TAG)
                 .commit()
-            R.id.nav_about -> {
+            R.id.nav_inspector_rating -> {
+//                todo
             }
+            R.id.nav_map -> supportFragmentManager.beginTransaction()
+                    .replace(R.id.main_frame, DpsMap())
+                    .addToBackStack("map")
+                    .commit()
         }// TODO: 4/6/2019
         return true
     }
