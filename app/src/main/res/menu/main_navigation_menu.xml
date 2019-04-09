@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/main"
-                android:icon="@drawable/ic_icons8_menu"
-                android:title="Основное меню" />
+                android:id="@+id/stop"
+                android:icon="@drawable/ic_stop"
+                android:title="Ocтановка инспектором"/>
         <item
-                android:id="@+id/nav_novelty"
-                android:icon="@drawable/ic_icons8_menu"
-                android:title="Остановка инспектора" />
+                android:id="@+id/dtp"
+                android:icon="@drawable/ic_dtp"
+                android:title="Случилось ДТП"/>
         <item
-                android:id="@+id/nav_about"
-                android:icon="@drawable/ic_icons8_menu"
-                android:title="О приложении" />
+                android:id="@+id/online_chat"
+                android:icon="@drawable/ic_uristchat"
+                android:title="Юрист онлайн-чат"/>
+        <item
+                android:id="@+id/call_lawyer"
+                android:icon="@drawable/ic_vyzovurist"
+                android:title="Юрист по вызову" />
+        <item
+                android:id="@+id/map"
+                android:icon="@drawable/ic_map"
+                android:title="Карта постов ДПС"/>
+        <item
+                android:id="@+id/inspector_rating"
+                android:icon="@drawable/ic_rate"
+                android:title="Рейтинг инспекторов"/>
     </group>
 </menu>
