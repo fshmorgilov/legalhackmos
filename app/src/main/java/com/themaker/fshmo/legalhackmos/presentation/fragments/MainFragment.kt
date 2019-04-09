@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -51,6 +52,9 @@ class MainFragment : MvpAppCompatFragment(),MainView {
             title = "Чем помочь?"
 
         }
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as AppCompatActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
         setHasOptionsMenu(true)
         onPostCreateView()
         return rootView
