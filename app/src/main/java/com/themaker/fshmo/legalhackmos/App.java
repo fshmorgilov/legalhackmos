@@ -13,7 +13,7 @@ public class App extends Application {
         super.onCreate();
         APP_INSTANCE = this;
         Stetho.initializeWithDefaults(this);
-        performScheduledWork();
+//        performScheduledWork();
     }
 
     private static void performScheduledWork() {

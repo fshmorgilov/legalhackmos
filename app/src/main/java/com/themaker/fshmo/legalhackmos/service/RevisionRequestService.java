@@ -67,8 +67,8 @@ public class RevisionRequestService extends Worker {
         notificationTapIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationTapIntent, 0);
         Notification notification = new NotificationCompat.Builder(getApplicationContext(), "abcde")
-                .setSmallIcon(R.drawable.logo_main) // fixme: 2/20/2019 change icon
-                .setContentTitle(context.getString(R.string.collection_is_updated))
+//                .setSmallIcon(R.drawable.logo_main) // fixme: 2/20/2019 change icon
+//                .setContentTitle(context.getString(R.string.collection_is_updated))
                 .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true)

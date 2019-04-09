@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/main"
+                android:icon="@drawable/ic_icons8_menu"
+                android:title="Основное меню" />
+        <item
+                android:id="@+id/nav_novelty"
+                android:icon="@drawable/ic_icons8_menu"
+                android:title="Остановка инспектора" />
+        <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_icons8_menu"
+                android:title="О приложении" />
+    </group>
+</menu>

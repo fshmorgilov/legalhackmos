@@ -1,25 +1,23 @@
 package com.themaker.fshmo.legalhackmos.data.mappers;
 
 import androidx.annotation.NonNull;
-import com.themaker.fshmo.klassikaplus.data.persistence.model.DbItem;
-import com.themaker.fshmo.klassikaplus.data.web.dto.catalog.ItemDto;
 
-public class DtoToDbItemMapper extends Mapping<ItemDto, DbItem> {
+public class DtoToDbItemMapper extends Mapping<Object, Object> {
     @Override
-    public DbItem map(@NonNull ItemDto itemDto) {
-        DbItem dbItem = new DbItem();
-        dbItem.setId(itemDto.getId());
-        dbItem.setExtId(itemDto.getExtId());
-        dbItem.setName(itemDto.getName());
-        dbItem.setDescription(itemDto.getDescription());
-        dbItem.setVendorCode(itemDto.getVendorCode());
-        dbItem.setNovelty(itemDto.isNovelty());
-        dbItem.setPageAlias(itemDto.getPageAlias());
-        dbItem.setIcon(itemDto.getIcon());
-        dbItem.setBasePrice(itemDto.getBasePrice());
-        dbItem.setDiscount(itemDto.getDiscount());
-        dbItem.setPrice(itemDto.getPrice());
-        dbItem.setCategory(itemDto.getCategory());
-        return dbItem;
+    public Object map(@NonNull Object itemDto) {
+//        DbItem dbItem = new DbItem();
+//        dbItem.setId(itemDto.getId());
+//        dbItem.setExtId(itemDto.getExtId());
+//        dbItem.setName(itemDto.getName());
+//        dbItem.setDescription(itemDto.getDescription());
+//        dbItem.setVendorCode(itemDto.getVendorCode());
+//        dbItem.setNovelty(itemDto.isNovelty());
+//        dbItem.setPageAlias(itemDto.getPageAlias());
+//        dbItem.setIcon(itemDto.getIcon());
+//        dbItem.setBasePrice(itemDto.getBasePrice());
+//        dbItem.setDiscount(itemDto.getDiscount());
+//        dbItem.setPrice(itemDto.getPrice());
+//        dbItem.setCategory(itemDto.getCategory());
+        return null;
     }
 }

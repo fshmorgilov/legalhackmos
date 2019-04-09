@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <include
+            layout="@layout/small_toolbar"
+            android:id="@+id/main_toolbar"
+    />
+    <ImageView
+            android:id="@+id/main_dtp_image"
+            android:layout_width="@dimen/main_buttons_width"
+            android:layout_height="@dimen/main_buttons_height"/>
+    <TextView
+            android:id="@+id/main_dtp_text"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+    <ImageView
+            android:id="@+id/main_inspector_image"
+            android:layout_width="@dimen/main_buttons_width"
+            android:layout_height="@dimen/main_buttons_height"/>
+    <TextView
+            android:id="@+id/main_inspector_text"
+            android:layout_width="@dimen/main_buttons_width"
+            android:layout_height="@dimen/main_buttons_height"/>
+    <ImageView
+            android:id="@+id/main_cons_image"
+            android:layout_width="@dimen/main_buttons_width"
+            android:layout_height="@dimen/main_buttons_height"/>
+    <TextView
+            android:id="@+id/main_cons_text"
+            android:layout_width="@dimen/main_buttons_width"
+            android:layout_height="@dimen/main_buttons_height"/>
+</RelativeLayout>
