@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"/>
         <TextView
                 android:id="@+id/main_dtp_text"
-                android:text="О боже ДТП"
+                android:text="Попал в ДТП"
                 android:gravity="center"
                 android:textAllCaps="true"
                 android:background="@color/colorAccent"
@@ -36,6 +36,7 @@
                 android:id="@+id/main_inspector_image"
                 android:layout_width="@dimen/main_buttons_width"
                 android:layout_below="@id/main_dtp_text"
+                android:scaleType="fitCenter"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/police"
                 android:layout_alignBottom="@id/main_inspector_image"
@@ -57,6 +58,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_below="@id/main_inspector_text"
                 android:background="@drawable/discussion"
+                android:scaleType="fitCenter"
                 android:layout_alignParentStart="true"
                 android:layout_width="@dimen/main_buttons_width"
                 android:layout_height="@dimen/main_buttons_height"/>
