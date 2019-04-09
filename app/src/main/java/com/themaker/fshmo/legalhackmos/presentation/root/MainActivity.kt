@@ -10,12 +10,19 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.themaker.fshmo.legalhackmos.R
 import com.themaker.fshmo.legalhackmos.data.preferences.Preferences
-import com.themaker.fshmo.legalhackmos.presentation.fragments.dps.DpsMap
 import com.themaker.fshmo.legalhackmos.presentation.fragments.MainFragment
+import com.themaker.fshmo.legalhackmos.presentation.fragments.chat.ChatFragment
+import com.themaker.fshmo.legalhackmos.presentation.fragments.dps.DpsMap
 import com.themaker.fshmo.legalhackmos.presentation.fragments.dtp.DtpFragment
 import com.themaker.fshmo.legalhackmos.presentation.fragments.webitem.WebItemFragment
 
-class MainActivity : AppCompatActivity(), MainMenuCallback, NavigateToDtpCallback {
+class MainActivity : AppCompatActivity(), MainMenuCallback, NavigateToDtpCallback, NavigateToChatCallback {
+    override fun navigateToChat() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frame, ChatFragment())
+            .addToBackStack("chat")
+            .commit()
+    }
 
     private val TAG = javaClass.name
 
@@ -88,10 +95,11 @@ class MainActivity : AppCompatActivity(), MainMenuCallback, NavigateToDtpCallbac
             R.id.nav_inspector_rating -> {
 //                todo
             }
+            R.id.nav_online_chat -> navigateToChat()
             R.id.nav_map -> supportFragmentManager.beginTransaction()
-                    .replace(R.id.main_frame, DpsMap())
-                    .addToBackStack("map")
-                    .commit()
+                .replace(R.id.main_frame, DpsMap())
+                .addToBackStack("dps")
+                .commit()
         }// TODO: 4/6/2019
         return true
     }

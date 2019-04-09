@@ -1,4 +1,4 @@
-package com.themaker.fshmo.legalhackmos.presentation.fragments.dps
+package com.themaker.fshmo.legalhackmos.presentation.fragments.chat
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.themaker.fshmo.legalhackmos.R
 import com.themaker.fshmo.legalhackmos.presentation.base.MvpAppCompatFragment
 import com.themaker.fshmo.legalhackmos.presentation.root.MainMenuCallback
 
-class DpsMap : MvpAppCompatFragment() {
+class ChatFragment: MvpAppCompatFragment() {
 
     private lateinit var rootView: View
     private lateinit var imageView: AppCompatImageView
@@ -21,8 +21,8 @@ class DpsMap : MvpAppCompatFragment() {
 
     lateinit var navigationCallback: MainMenuCallback
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater.inflate(R.layout.dps_fragment, container, false)
-        toolbar = rootView.findViewById(R.id.dps_toolbar)
+        rootView = inflater.inflate(R.layout.chat_fragment, container, false)
+        toolbar = rootView.findViewById(R.id.chat_toolbar)
         toolbar.title = "Карта постов ДПС"
         navigationCallback = activity as MainMenuCallback
 
